@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE System SYSTEM "../LibraryElement.dtd" >
+<!DOCTYPE System SYSTEM "../LibraryElement.dtd">
 <System Name="System" Comment="System Configuration">
+  <Attribute Name="System.Device.FolderPath" Value="EcoRT_0" />
   <Identification Standard="61499-1" />
   <VersionInfo Organization="Schneider Electric" Version="0.0" Author="SESA11447" Date="2/19/2024" />
-  <Application Name="APP1">
-    <SubAppNetwork />
+  <Application ID="3FCC1707393DF977" Name="APP1">
+    <SubAppNetwork>
+      <FB ID="8D58B517986C6D23" Name="FB1" Type="EVENTCHAINHEAD" x="1360" y="800" Namespace="Runtime.Standard" />
+      <FB ID="384D3EFB4116D3BD" Name="FB2" Type="ADD_1990CFD1468AAE4A6" x="1060" y="1920" Namespace="Main">
+        <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;IN${CNT}:LREAL" />
+        <Parameter Name="IN1" Value="0.0" />
+        <Parameter Name="IN2" Value="0.0" />
+      </FB>
+      <FB ID="8946350E81947F6A" Name="FB3" Type="ADD_1990CFD1468AAE4A6" x="2200" y="1820" Namespace="Main">
+        <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;IN${CNT}:LREAL" />
+        <Parameter Name="IN1" Value="0.0" />
+        <Parameter Name="IN2" Value="0.0" />
+      </FB>
+      <EventConnections>
+        <Connection Source="FB2.CNF" Destination="FB3.REQ" dx1="47.47925" />
+        <Connection Source="FB1.INITO" Destination="FB2.REQ" dx1="41.875" dx2="50" dy="590" />
+      </EventConnections>
+    </SubAppNetwork>
   </Application>
   <Device ID="9B721744-A888-4ED7-A910-59E0842847FE" Name="EcoRT_0" Type="Soft_dPAC" x="700" y="700" Namespace="SE.DPAC">
-    <Resource Name="RES0" Type="EMB_RES_ECO" x="800" y="800" Namespace="Runtime.Management" />
+    <Resource ID="17C3A18C8D42AF76" Name="RES0" Type="EMB_RES_ECO" x="800" y="800" Namespace="Runtime.Management">
+      <FBNetwork />
+    </Resource>
     <FBNetwork />
   </Device>
 </System>
