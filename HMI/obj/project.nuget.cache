@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZQoLHLz1FwmtfCJb5tCdYSfhHzqmhhMHtEaFHvEXPtrosYMS+tCBflVstx0kgmmQir3/A2yUGP+4WPPhRGCcxA==",
+  "dgSpecHash": "wUQVyV4FWgzfdWticTtbhtcKmbhKnDtQj7dm1C/1DOBHvHhfhuS0FpNPSbwGM4ZUx/bvzBlGn1I3Uv3Wncun/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SESA11447\\Documents\\testgitProj\\HMI\\HMI.csproj",
+  "projectFilePath": "C:\\Users\\SESA11447\\Documents\\testgitProj\\New folder\\TestEAE\\HMI\\HMI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SESA11447\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\SESA11447\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
