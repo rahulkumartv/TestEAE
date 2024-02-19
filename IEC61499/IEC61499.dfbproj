@@ -53,6 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CAT1\CAT1.cfg">
+      <DependentUpon>CAT1.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
     <None Include="Configuration\Certificates\Certificates.xml" />
     <None Include="Configuration\se-rbac-roles.json" />
     <None Include="Configuration\se-rbac-users.json" />
@@ -69,6 +73,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basic1.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="CAT1\CAT1.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="CAT1\CAT1_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>CAT1.fbt</DependentUpon>
+      <HMI>..\HMI\CAT1\CAT1_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="CAT1\CAT1_Motion.fbt">
+      <IEC61499Type>CAT_Composite</IEC61499Type>
+      <DependentUpon>CAT1.fbt</DependentUpon>
+      <Plugin>MotionFacetPlugin</Plugin>
+      <Singleton>true</Singleton>
+      <TemplateName>MotionFacetSingleAxis</TemplateName>
+    </Compile>
     <Compile Include="System\System.sys">
       <IEC61499Type>System</IEC61499Type>
     </Compile>
@@ -78,6 +101,13 @@
     <Folder Include="Configuration\Certificates" />
     <Folder Include="License" />
     <Folder Include="Log" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CAT1\CAT1_Motion.composite.offline.xml">
+      <DependentUpon>CAT1_Motion.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
   </ItemGroup>
   <Import Project="$(SharpDevelopBinPath)\NxtControl.Build.61499.Targets" />
 </Project>

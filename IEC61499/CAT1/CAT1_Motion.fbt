@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="439be95d-c6cf-4d88-ab1f-920593be07a1" Name="CAT1_Motion" Comment="Composite Function Block Type" Namespace="Main">
+  <Attribute Name="AllowExtendableInterface" Value="1" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="38" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Schneider Electric" Version="0.0" Author="SESA658662" Date="2/19/2024" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Service Request">
+        <With Var="AxisRef" />
+      </Event>
+      <Event Name="RD" />
+      <Event Name="WR" Comment="Service Request">
+        <With Var="IncrementResolution" />
+        <With Var="PositionResolution" />
+        <With Var="GearIn" />
+        <With Var="GearOut" />
+        <With Var="InvertDirection" />
+        <With Var="Index" />
+        <With Var="ModuloPeriod" />
+        <With Var="NegativeDirectionLimit" />
+        <With Var="PositiveDirectionLimit" />
+        <With Var="MovementLimit" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO">
+        <With Var="PositionOut" />
+        <With Var="IncrementResolutionOut" />
+        <With Var="PositionResolutionOut" />
+        <With Var="GearInOut" />
+        <With Var="GearOutOut" />
+        <With Var="InvertDirectionOut" />
+        <With Var="Status" />
+        <With Var="ModulePeriodOut" />
+        <With Var="NegativeDirectionLimitOut" />
+        <With Var="PositiveDirectionLimitOut" />
+        <With Var="IsLimited" />
+        <With Var="IsModulo" />
+      </Event>
+      <Event Name="RDO" Comment="Confirmation of Requested Service">
+        <With Var="PositionOut" />
+        <With Var="IncrementResolutionOut" />
+        <With Var="PositionResolutionOut" />
+        <With Var="GearInOut" />
+        <With Var="GearOutOut" />
+        <With Var="InvertDirectionOut" />
+        <With Var="Status" />
+        <With Var="ModulePeriodOut" />
+        <With Var="NegativeDirectionLimitOut" />
+        <With Var="PositiveDirectionLimitOut" />
+        <With Var="IsLimited" />
+        <With Var="IsModulo" />
+      </Event>
+      <Event Name="WRO" />
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="AxisRef" Type="MotionAxisRef" Namespace="SE.Motion" />
+      <VarDeclaration Name="Index" Type="UINT" />
+      <VarDeclaration Name="IncrementResolution" Type="DINT" />
+      <VarDeclaration Name="PositionResolution" Type="LREAL" />
+      <VarDeclaration Name="GearIn" Type="UDINT" />
+      <VarDeclaration Name="GearOut" Type="UDINT" />
+      <VarDeclaration Name="InvertDirection" Type="BOOL" />
+      <VarDeclaration Name="MovementLimit" Type="ET_MovementLimit" Namespace="SE.Motion" />
+      <VarDeclaration Name="ModuloPeriod" Type="LREAL" />
+      <VarDeclaration Name="NegativeDirectionLimit" Type="LREAL" />
+      <VarDeclaration Name="PositiveDirectionLimit" Type="LREAL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="PositionOut" Type="LREAL" />
+      <VarDeclaration Name="IncrementResolutionOut" Type="DINT" />
+      <VarDeclaration Name="PositionResolutionOut" Type="LREAL" />
+      <VarDeclaration Name="GearInOut" Type="UDINT" />
+      <VarDeclaration Name="GearOutOut" Type="UDINT" />
+      <VarDeclaration Name="InvertDirectionOut" Type="BOOL" />
+      <VarDeclaration Name="ModulePeriodOut" Type="LREAL" />
+      <VarDeclaration Name="NegativeDirectionLimitOut" Type="LREAL" />
+      <VarDeclaration Name="PositiveDirectionLimitOut" Type="LREAL" />
+      <VarDeclaration Name="Status" Type="STRING" />
+      <VarDeclaration Name="IsLimited" Type="BOOL" />
+      <VarDeclaration Name="IsModulo" Type="BOOL" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="5" Name="AxisRWStaticInst" Type="AxisRW" x="840" y="1760" Namespace="SE.Motion" />
+    <FB ID="17" Name="AxisRWDynamicInst" Type="AxisRW" x="3780" y="1780" Namespace="SE.Motion" />
+    <FB ID="37" Name="InitOHandler" Type="E_REND" x="3860" y="880" Namespace="IEC61499.Standard" />
+    <FB ID="38" Name="ReadHandler" Type="E_REND" x="4440" y="1000" Namespace="IEC61499.Standard" />
+    <Input Name="AxisRef" x="2200" y="1112" Type="Data" />
+    <Input Name="INIT" x="20" y="1832" Type="Event" />
+    <Input Name="WR" x="2500" y="1952" Type="Event" />
+    <Input Name="RD" x="2500" y="1612" Type="Event" />
+    <Input Name="IncrementResolution" x="2480" y="2192" Type="Data" />
+    <Input Name="PositionResolution" x="2480" y="2312" Type="Data" />
+    <Input Name="GearIn" x="2480" y="2432" Type="Data" />
+    <Input Name="GearOut" x="2480" y="2552" Type="Data" />
+    <Input Name="InvertDirection" x="2480" y="2652" Type="Data" />
+    <Input Name="Index" x="2480" y="2072" Type="Data" />
+    <Input Name="ModuloPeriod" x="2480" y="2892" Type="Data" />
+    <Input Name="NegativeDirectionLimit" x="2480" y="2992" Type="Data" />
+    <Input Name="PositiveDirectionLimit" x="2480" y="3112" Type="Data" />
+    <Input Name="MovementLimit" x="2340" y="2772" Type="Data" />
+    <Frame Name="FRAME1" X="540" Y="1400" Width="1840" Height="2360">
+      <Parameter Name="BackgroundColor" Value="AliceBlue" />
+      <Parameter Name="TextColor" Value="Black" />
+      <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+      <Parameter Name="TextAlignment" Value="TopLeft" />
+      <Parameter Name="MoveStyle" Value="AnyContained" />
+      <Parameter Name="NxtLayerIdentifier" Value="" />
+    </Frame>
+    <Frame Name="FRAME2" X="3420" Y="1420" Width="1740" Height="2360">
+      <Parameter Name="BackgroundColor" Value="AliceBlue" />
+      <Parameter Name="TextColor" Value="Black" />
+      <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+      <Parameter Name="TextAlignment" Value="TopLeft" />
+      <Parameter Name="MoveStyle" Value="AnyContained" />
+      <Parameter Name="NxtLayerIdentifier" Value="" />
+    </Frame>
+    <Frame Name="COMMENT1" X="580" Y="1440" Width="1748.687" Height="181.0938" IsComment="true">
+      <Parameter Name="BackgroundColor" Value="LemonChiffon" />
+      <Parameter Name="TextColor" Value="Black" />
+      <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+      <Parameter Name="TextAlignment" Value="TopCenter" />
+      <Parameter Name="MoveStyle" Value="None" />
+      <Parameter Name="Text" Value="Placeholder for initialising logic axis parameters with constant values&#xD;&#xA;" />
+      <Parameter Name="NxtLayerIdentifier" Value="" />
+    </Frame>
+    <Frame Name="COMMENT2" X="3460" Y="1460" Width="1457.489" Height="181.0938" IsComment="true">
+      <Parameter Name="BackgroundColor" Value="LemonChiffon" />
+      <Parameter Name="TextColor" Value="Black" />
+      <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+      <Parameter Name="TextAlignment" Value="TopCenter" />
+      <Parameter Name="MoveStyle" Value="None" />
+      <Parameter Name="Text" Value="Placeholder for writing logix axis parameters dynamically&#xD;&#xA;" />
+      <Parameter Name="NxtLayerIdentifier" Value="" />
+    </Frame>
+    <Output Name="IsLimited" x="5500" y="3332" Type="Data" />
+    <Output Name="IsModulo" x="5500" y="3492" Type="Data" />
+    <Output Name="ModulePeriodOut" x="5480" y="2912" Type="Data" />
+    <Output Name="NegativeDirectionLimitOut" x="5480" y="3032" Type="Data" />
+    <Output Name="PositiveDirectionLimitOut" x="5477.76" y="3172" Type="Data" />
+    <Output Name="Status" x="5480" y="2792" Type="Data" />
+    <Output Name="WRO" x="5200" y="1072" Type="Event" />
+    <Output Name="RDO" x="5200" y="952" Type="Event" />
+    <Output Name="INITO" x="5200" y="832" Type="Event" />
+    <Output Name="PositionOut" x="5480" y="2052" Type="Data" />
+    <Output Name="IncrementResolutionOut" x="5480" y="2192" Type="Data" />
+    <Output Name="PositionResolutionOut" x="5480" y="2312" Type="Data" />
+    <Output Name="GearInOut" x="5480" y="2412" Type="Data" />
+    <Output Name="GearOutOut" x="5480" y="2552" Type="Data" />
+    <Output Name="InvertDirectionOut" x="5480" y="2672" Type="Data" />
+    <EventConnections>
+      <Connection Source="ReadHandler.EO" Destination="RDO" dx1="247.1563">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="InitOHandler.EO" Destination="INITO" dx1="44.3125" />
+      <Connection Source="INIT" Destination="InitOHandler.R" dx1="41.41669" />
+      <Connection Source="RD" Destination="ReadHandler.EI1" dx1="1530.375">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="InitOHandler.EO" Destination="ReadHandler.R" dx1="44.3125" />
+    </EventConnections>
+  </FBNetwork>
+</FBType>
