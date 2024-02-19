@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE System SYSTEM "../LibraryElement.dtd" >
+<System Name="System" Comment="System Configuration">
+  <Identification Standard="61499-1" />
+  <VersionInfo Organization="Schneider Electric" Version="0.0" Author="SESA11447" Date="2/19/2024" />
+  <Application Name="APP1">
+    <SubAppNetwork />
+  </Application>
+  <Device ID="9B721744-A888-4ED7-A910-59E0842847FE" Name="EcoRT_0" Type="Soft_dPAC" x="700" y="700" Namespace="SE.DPAC">
+    <Resource Name="RES0" Type="EMB_RES_ECO" x="800" y="800" Namespace="Runtime.Management" />
+    <FBNetwork />
+  </Device>
+</System>
